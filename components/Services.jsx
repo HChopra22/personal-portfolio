@@ -5,28 +5,33 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/compo
 const servicesData = [
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: 'Web Design',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit neque obcaecati suscipit nisi eum, animi, beatae optio illo corporis placeat ab repudiandae voluptates vel error, dolorum minus magni dicta cupiditate!'
-  },
-  {
-    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
     title: 'UX / UI Design',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit neque obcaecati suscipit nisi eum, animi, beatae optio illo corporis placeat ab repudiandae voluptates vel error, dolorum minus magni dicta cupiditate!'
+    description: 'Using applications such as Figma, Adobe XD, Adobe Illustrate and Canva; I am profficient in taking ideas and devloping them into full wireframed UX models for clients to visualise and interact with their designs.'
   },
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
     title: 'Web Developer',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit neque obcaecati suscipit nisi eum, animi, beatae optio illo corporis placeat ab repudiandae voluptates vel error, dolorum minus magni dicta cupiditate!'
+    description: 'Using languages and frameworks such as HTML, CSS, Javascript, ReactJS, TailwindCSS. I can create stunning websites to suit your purpose. Whether the need is to provide content or eCommerce, no goal is impossible to create.'
   },
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
     title: 'Business Growth Development',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit neque obcaecati suscipit nisi eum, animi, beatae optio illo corporis placeat ab repudiandae voluptates vel error, dolorum minus magni dicta cupiditate!'
+    description: 'As a full time Product Owner for the largest Gaming/Gambling events businesses, I am capable of full project cycles. Including project discovery, requirements gathering, overseeing of delivery, sanity checking and final deliverables.'
   },
   {
     icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: 'Photographer',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit neque obcaecati suscipit nisi eum, animi, beatae optio illo corporis placeat ab repudiandae voluptates vel error, dolorum minus magni dicta cupiditate!'
+    title: 'SEO',
+    description: 'Having experience with analytical data across multiple different products reaching 3M+ Users. I use tools such as Semrush, Google Analytics & Adobe Analytics to make sure projects are at optimal performance.'
+  },
+  {
+    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
+    title: 'Photography',
+    description: 'I have a deep passion for Photography, you can visit my portfolio using the link below. I am able to take pictures of stunning landscapes as well as memorable portraits for special occasions. Visit my site here'
+  },
+  {
+    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
+    title: 'Videography',
+    description: 'The passion translates over to catching amazing videos with stunning quality. Profficient in drone usage to get amazing B-Role for video projects as well as an understanding of the clients idea.'
   },
 ]
 

@@ -15,34 +15,42 @@ const projectData = [
   {
     image: '/work/3.png',
     category: 'react js',
+    name: 'Portfolio Website',
+    description: 'The current website you are on. Developed with the purpose of networking myself out to future clients. Stack used: ReactJS, Next.JS, TailwindCSS, ShadCn',
+    link: '/',
+    github: 'https://github.com/HChopra22/personal-portfolio',
+  },
+  {
+    image: '/work/3.png',
+    category: 'react js',
     name: 'Photography Website',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam eveniet nulla illum, ab quibusdam possimus magni impedit perspiciatis voluptate. Cupiditate aspernatur nihil maiores ratione ut tempore facere distinctio at.',
+    description: 'A Photography Website to display all my photos. Landscapes from around the world as well as portraits. Stack used: ReactJS, Tailwind CSS, Framer Motion',
     link: '/',
     github: '/',
   },
   {
     image: '/work/2.png',
-    category: 'react js',
-    name: 'Photography Website',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam eveniet nulla illum, ab quibusdam possimus magni impedit perspiciatis voluptate. Cupiditate aspernatur nihil maiores ratione ut tempore facere distinctio at.',
+    category: 'Unity 3D',
+    name: 'FPS 3D Zombie survival',
+    description: 'A round based Zombie survival game. Developed for my final year dissertation. The game is accompanied by a 15,000 word document highlighting the key frameworks of games design using C#. Stack used: Unity',
     link: '/',
     github: '/',
   },
   {
     image: '/work/1.png',
-    category: 'react js',
-    name: 'Photography Website',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam eveniet nulla illum, ab quibusdam possimus magni impedit perspiciatis voluptate. Cupiditate aspernatur nihil maiores ratione ut tempore facere distinctio at.',
+    category: 'Business Development',
+    name: 'Indian Resteraunt Website',
+    description: 'An Indian resteraunt developed using the Wix.com CMS. Project roadmap and development was handled by me as well as the photography. The google business page was also created and ran by me.',
     link: '/',
     github: '/',
   },
   {
     image: '/work/4.png',
-    category: 'react js',
-    name: 'Photography Website',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam eveniet nulla illum, ab quibusdam possimus magni impedit perspiciatis voluptate. Cupiditate aspernatur nihil maiores ratione ut tempore facere distinctio at.',
+    category: 'Business Development',
+    name: 'Games Development Dissertation',
+    description: 'A 15,000 Word dissertation that covers the key concepts of games development with C# and Unity3D. The dissertation also covers the rise of games development and the dangers alongside it.',
     link: '/',
-    github: '/',
+    github: 'https://github.com/HChopra22/dissertation-text-final',
   },
 ]
 
@@ -54,7 +62,7 @@ const Work = () => {
         {/*text*/}
         <div className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
           <h2 className="section-title mb-4">Latest Projects</h2>
-          <p className="subtitle mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, maiores labore laudantium ratione nostrum nam accusantium mollitia aliquam neque, incidunt inventore ipsum! Recusandae enim possimus, placeat deserunt quis vitae pariatur?</p>
+          <p className="subtitle mb-8">Take a look at some of my recent projects. There are links to the Github Repository if applicable as well as links for you to take a look for yourself!</p>
           <Link href='/projects'>
             <Button>All Projects</Button>
           </Link>

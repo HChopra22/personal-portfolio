@@ -24,7 +24,7 @@ const Hero = () => {
               <div className='text-sm uppercase font-semibold mb-4 dark:text-primary tracking-[4px]'>Web Developer | Project Manager | Photographer </div>
               <h1 className='h1 mb-4 dark:text-primary'>Hello, My name is Harsh Chopra <span className='text-5xl'>👋🏾</span></h1>
               <p className='subtitle max-w-[490px] mx-auto xl:mx-0'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae quis, eius sint molestiae deserunt facere optio repellendus adipisci inventore earum distinctio. Necessitatibus, saepe. A vel quae molestias unde ullam!
+                I am a product owner with a computer science degree and a passion for all things tech. This is my portfolio which displays My works and links to other services i provide. <br/> Do not hesitate if you would like to get in touch!
               </p>
               {/*buttons */}
               <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
@@ -33,9 +33,11 @@ const Hero = () => {
                     Contact Me <Send size={18} />
                   </Button>
                 </Link>
-                <Button variant='secondary' className='gap-x-2'>
+                <a href='/HarshChopraCV-july.pdf'  download='/HarshChopraCV-july.pdf'>
+                  <Button variant='secondary' className='gap-x-2'>
                     Download CV <Download size={18} />
-                </Button>
+                  </Button>
+                </a>
               </div>
               {/*socials */}
               <Socials containerStyles='flex gap-x-6 mx-auto xl:mx-0' iconStyles='text-foreground text-[22px] hover:text-primary transition-all'/>

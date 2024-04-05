@@ -16,7 +16,7 @@ const infoData = [
   },
   {
     icon: <MailIcon size={20} />,
-    text: 'chopraharshdeep@gmail.com',
+    text: 'hcmedia@gmail.com',
   },
   {
     icon: <Calendar size={20} />,
@@ -85,16 +85,16 @@ const skillData = [
     title: 'skills',
     data: [
       {
-        name: 'HTML, CSS',
+        name: 'Frontend: HTML, CSS, Javascript, ReactJS',
       },
       {
-        name: 'HTML, CSS',
+        name: 'UX: Figma, Adobe XD, TailwindCSS',
       },
       {
-        name: 'HTML, CSS',
+        name: 'Photography: Photoshop, Lightroom, After effects',
       },
       {
-        name: 'HTML, CSS',
+        name: 'Business Growth: PowerBI, GTM, Google Analytics',
       },
     ]
   },
@@ -102,16 +102,31 @@ const skillData = [
     title: 'tools',
     data: [
       {
-        imgPath: '/about/vscode.svg',
+        imgPath: '/about/html.svg',
       },
       {
-        imgPath: '/about/figma.svg',
+        imgPath: '/about/css.svg',
       },
       {
-        imgPath: '/about/notion.svg',
+        imgPath: '/about/java.svg',
       },
       {
-        imgPath: '/about/wordpress.svg',
+        imgPath: '/about/js.svg',
+      },
+      {
+        imgPath: '/about/react.svg',
+      },
+      {
+        imgPath: '/about/unity.svg',
+      },
+      {
+        imgPath: '/about/adobecc.svg',
+      },
+      {
+        imgPath: '/about/photoshop.svg',
+      },
+      {
+        imgPath: '/about/optimizely.svg',
       },
     ]
   }
@@ -143,7 +158,7 @@ const About = () => {
                 <TabsContent value='personal'>
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">Unmatched Services</h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0">I specialize in Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, eveniet adipisci quas quisquam totam ab dignissimos hic accusantium aspernatur enim doloribus deserunt nesciunt laborum quidem quo est distinctio quae magni!</p>
+                    <p className="subtitle max-w-xl mx-auto xl:mx-0">I am a CS Graduate who has full time experience in web development and web management. Furthermore I have hands on experience with Business, Web & App strategy growth. Take a look at my history and services.</p>
                     {/*icons */}
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
                       {infoData.map((item, index)=> {
@@ -233,7 +248,7 @@ const About = () => {
                         {getData(skillData, 'skills').data.map((item, index)=> {
                           const {name} = item
                           return (
-                            <div className="w-2/4 text-center xl:text-left mx-auto xl:mx-0" key={index}>
+                            <div className="w-3/4 p-2 text-center xl:text-left mx-auto xl:mx-0" key={index}>
                               <div className="font-medium">{name}</div>
                             </div>
                           )
@@ -245,12 +260,12 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2 xl:text-left">Tools</h4>
                       <div className="border-b border-border mb-4"></div>
                       {/*tools list */}
-                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                      <div className="flex flex-wrap items-center gap-y-4 gap-x-8 justify-center xl:justify-center">
                         {getData(skillData, 'tools').data.map((item, index)=> {
                           const {imgPath} = item
                           return (
                             <div key={index}>
-                              <Image src={imgPath} width={48} height={48} alt="" priority />
+                              <Image src={imgPath} width={60} height={60} alt="" priority />
                             </div>
                           )
                         })}

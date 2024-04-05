@@ -8,15 +8,15 @@ import React from 'react'
 
 const icons = [
   {
-    path: '/',
+    path: 'https://www.linkedin.com/in/harshdeep-chopra/',
     name: <RiLinkedinFill/>
   },
   {
-    path: '/',
+    path: 'https://github.com/HChopra22',
     name: <RiGithubFill/>
   },
   {
-    path: '/',
+    path: 'https://www.instagram.com/harshc._/',
     name: <RiInstagramFill/>
   },
 ]
