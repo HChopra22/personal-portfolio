@@ -16,13 +16,13 @@ import Socials from './Socials'
 
 const Hero = () => {
   return (
-      <section className='py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom dark:bg-none bg-cover'>
+      <section className='py-12 xl:py-24 h-[84vh] xl:pt-28 dark:bg-accent bg-no-repeat bg-bottom bg-cover'>
         <div className="container mx-auto">
           <div className='flex justify-between gap-x-8'>
             {/*text */}
             <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
-              <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>Web Developer</div>
-              <h1 className='h1 mb-4'>Hello, My name is Harsh Chopra <span className='text-5xl'>👋🏾</span></h1>
+              <div className='text-sm uppercase font-semibold mb-4 dark:text-primary tracking-[4px]'>Web Developer | Project Manager | Photographer </div>
+              <h1 className='h1 mb-4 dark:text-primary'>Hello, My name is Harsh Chopra <span className='text-5xl'>👋🏾</span></h1>
               <p className='subtitle max-w-[490px] mx-auto xl:mx-0'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae quis, eius sint molestiae deserunt facere optio repellendus adipisci inventore earum distinctio. Necessitatibus, saepe. A vel quae molestias unde ullam!
               </p>
@@ -49,7 +49,7 @@ const Hero = () => {
               {/*badge3 */}
               <Badge containerStyles='absolute top-[65%] -right-8' icon={<RiArtboard2Fill/>} endCountNum={10} endCountText='+' badgeText='UX Designs created' />
               <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2'>
-                <DevImg containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom' imgSrc='/hero/developer.png' />
+                <DevImg containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom' imgSrc='/hero/harsh-hero-memoji-1.png'/>
               </div>
             </div>
           </div>

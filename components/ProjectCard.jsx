@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Card, CardHeader } from './ui/card'
 import { Github, Link2Icon } from 'lucide-react'
-import { Badge } from 'lucide-react'
+import { Badge } from './ui/badge'
 
 
 const ProjectCard = ({project}) => {
