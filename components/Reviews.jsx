@@ -12,22 +12,22 @@ import {Pagination} from 'swiper/modules'
 
 const reviewsData = [
   {
-    avatar: '/reviews/avatar-1.png',
+    avatar: '/reviews/dave.png',
     name: 'Dave Cohen',
     job: 'Computer Science Lecturer',
-    review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis dolorum assumenda recusandae consectetur quam id dolorem, quia quaerat aut nobis, error sint sunt? Fugiat harum consequuntur quae fugit distinctio modi!'
+    review: 'Harsh showed impressive skill with his FPS Unity project. Using a variety of different game states, vector logic and animations to make his game have depth. His report goes in large depth to cover all aspects of modern games design and its progress in the world.'
   },
   {
-    avatar: '/reviews/avatar-2.png',
-    name: 'Dave Cohen',
-    job: 'Computer Science Lecturer',
-    review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis dolorum assumenda recusandae consectetur quam id dolorem, quia quaerat aut nobis, error sint sunt? Fugiat harum consequuntur quae fugit distinctio modi!'
+    avatar: '/reviews/silvio.jpg',
+    name: 'Silvio Monteiro',
+    job: 'Senior Software Engineer',
+    review: 'Harsh was responsible for developing and maintaining email direct marketing campaigns for companies such as Microsoft, McAfee, VMware and Cisco.He displayed excellent communication, organisation, reliablity and computer literacy. He is flexible and willing to work on any project that is assigned to him. I think he would be a tremendous asset for your company and has my highest recommendation.'
   },
   {
-    avatar: '/reviews/avatar-3.png',
-    name: 'Dave Cohen',
-    job: 'Computer Science Lecturer',
-    review: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis dolorum assumenda recusandae consectetur quam id dolorem, quia quaerat aut nobis, error sint sunt? Fugiat harum consequuntur quae fugit distinctio modi!'
+    avatar: '/reviews/priya.jpg',
+    name: 'Paramjeet Kapoor',
+    job: 'Accounts Manager',
+    review: 'Harsh was up to any task given to him in his 4 years at Henry Construction. He showed great communication skills by befrending the staff and being able to help them at any given turn. He would be a great addition to any team or project.'
   },
 
 ]
