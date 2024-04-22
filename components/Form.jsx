@@ -20,7 +20,7 @@ const Form = () => {
       <Textarea type='name' id='message' placeholder='Please type your message here.'/>
       <MessagesSquare className="absolute top-4 right-6" size={20}/>
     </div>
-    <Button className='flex items-center gap-x-1 max-w-[166px] rounded-full'>
+    <Button type='submit' className='flex items-center gap-x-1 max-w-[166px] rounded-full'>
       Let's Talk
       <ArrowRightIcon size={20}/>
     </Button>

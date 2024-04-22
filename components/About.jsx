@@ -1,9 +1,15 @@
+'use client'
+
 import DevImg from "./DevImg"
 import Image from "next/image"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 
+
 import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar, Briefcase } from "lucide-react"
 import { info } from "autoprefixer"
+import Lottie from "lottie-react"
+import animationData from '../public/about/uianimation.json'
+import animationdarkData from '../public/about/lightui.json'
 
 const infoData = [
   {
@@ -141,8 +147,8 @@ const About = () => {
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">About Me</h2>
         <div className="flex flex-col xl:flex-row">
           {/*image */}
-          <div className="hidden xl:flex flex-1 relative">
-            <DevImg containerStyles='bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative' imgSrc='/about/aboutme-image.png'/>
+          <div className="hidden xl:flex flex-1 relative p-4 w-[505px] h-[505px]">
+            <Lottie animationData={animationdarkData}></Lottie>
           </div>
           {/*tabs */}
           <div className="flex-1">

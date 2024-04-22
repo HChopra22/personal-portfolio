@@ -12,8 +12,8 @@ const Contact = () => {
             <span className='w-[30px] h-[2px] bg-primary'></span>
             Say Hello
           </div>
-          <h1 className='h1 max-w-md mb-8'>lets work together</h1>
-          <p className='subtitle max-w-[400px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloribus cumque voluptate quasi, blanditiis eum quod dolorem, et omnis delectus, dolorum mollitia quaerat voluptatum est minima ad reprehenderit ipsa laborum?</p>
+          <h1 className='h1 max-w-md mb-8'>Lets work together</h1>
+          <p className='subtitle max-w-[400px]'>Looking for any work to be completed on your digital projects? Do not hesitate to give me a message. Please let me know your current painpoints, timelines and what you would see as an optimal product.</p>
         </div>
         {/*illustration */}
         <div className='hidden xl:flex w-full bg-contact_illustration_light dark:bg-contact_illustration_dark bg-contain bg-top bg-no-repeat'></div>
@@ -24,17 +24,17 @@ const Contact = () => {
           {/*mail */}
           <div className='flex items-center gap-x-8'>
             <MailIcon size={20} className='text-primary' />
-            <div>hcmedia@gmail.com</div>
+            <div>Please respond with an email I can contact!</div>
           </div>
           {/*Address */}
           <div className='flex items-center gap-x-8'>
             <HomeIcon size={20} className='text-primary' />
-            <div>London, England</div>
+            <div>Let me know where you are located</div>
           </div>
           {/*Number */}
             <div className='flex items-center gap-x-8'>
             <PhoneCall size={20} className='text-primary' />
-            <div>(+44)7803 558147</div>
+            <div>Leave your number in the messages field (optional) </div>
           </div>
         </div>
         <Form></Form>

@@ -13,7 +13,7 @@ import ProjectCard from '@/components/ProjectCard'
 
 const projectData = [
   {
-    image: '/work/3.png',
+    image: '/work/portfoliopic.png',
     category: 'react js',
     name: 'Portfolio Website',
     description: 'The current website you are on. Developed with the purpose of networking myself out to future clients. Stack used: ReactJS, Next.JS, TailwindCSS, ShadCn',
@@ -21,7 +21,7 @@ const projectData = [
     github: 'https://github.com/HChopra22/personal-portfolio',
   },
   {
-    image: '/work/3.png',
+    image: '/work/Photogpic.png',
     category: 'react js',
     name: 'Photography Website',
     description: 'A Photography Website to display all my photos. Landscapes from around the world as well as portraits. Stack used: ReactJS, Tailwind CSS, Framer Motion',
@@ -29,7 +29,7 @@ const projectData = [
     github: '/',
   },
   {
-    image: '/work/2.png',
+    image: '/work/FPSShooter.png',
     category: 'Unity 3D',
     name: 'FPS 3D Zombie survival',
     description: 'A round based Zombie survival game. Developed for my final year dissertation. The game is accompanied by a 15,000 word document highlighting the key frameworks of games design using C#. Stack used: Unity',
@@ -37,7 +37,7 @@ const projectData = [
     github: '/',
   },
   {
-    image: '/work/1.png',
+    image: '/work/occsite.png',
     category: 'Business Development',
     name: 'Indian Resteraunt Website',
     description: 'An Indian resteraunt developed using the Wix.com CMS. Project roadmap and development was handled by me as well as the photography. The google business page was also created and ran by me.',
@@ -45,7 +45,7 @@ const projectData = [
     github: '/',
   },
   {
-    image: '/work/4.png',
+    image: '/work/disso.png',
     category: 'Business Development',
     name: 'Games Development Dissertation',
     description: 'A 15,000 Word dissertation that covers the key concepts of games development with C# and Unity3D. The dissertation also covers the rise of games development and the dangers alongside it.',
