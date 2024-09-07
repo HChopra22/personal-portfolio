@@ -38,7 +38,7 @@ const projectData = [
   },
   {
     image: '/work/occsite.png',
-    category: 'Business Development',
+    category: 'Business Dev',
     name: 'Indian Resteraunt Website',
     description: 'An Indian resteraunt developed using the Wix.com CMS. Project roadmap and development was handled by me as well as the photography. The google business page was also created and ran by me.',
     link: '/',
@@ -46,7 +46,7 @@ const projectData = [
   },
   {
     image: '/work/disso.png',
-    category: 'Business Development',
+    category: 'Business Dev',
     name: 'Games Development Dissertation',
     description: 'A 15,000 Word dissertation that covers the key concepts of games development with C# and Unity3D. The dissertation also covers the rise of games development and the dangers alongside it.',
     link: '/',
