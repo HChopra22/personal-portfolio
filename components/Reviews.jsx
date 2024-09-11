@@ -56,7 +56,7 @@ const Reviews = () => {
                 <Card className='bg-tertiary dark:bg-secondary/40 p-8 min-h-[300px]'>
                   <CardHeader className='p-0 mb-5'>
                     <div className="flex items-center gap-x-4">
-                      <Image src={person.avatar} width={70} height={70} alt="" priority/>
+                      <Image src={person.avatar} width={70} height={70} alt={person.name} priority/>
                       <div className="flex flex-col">
                         <CardTitle>{person.name}</CardTitle>
                         <p>{person.job}</p>

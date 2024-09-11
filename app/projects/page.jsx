@@ -17,7 +17,7 @@ const projectData = [
     category: 'react js',
     name: 'Photography Website',
     description: 'A Photography Website to display all my photos. Landscapes from around the world as well as portraits. Stack used: ReactJS, Tailwind CSS, Framer Motion',
-    link: 'wwww.photog.harshchopra.com',
+    link: 'https://photos.harshchopra.com',
     github: 'https://github.com/HChopra22/photog-portfolio',
   },
   {
@@ -49,7 +49,7 @@ const projectData = [
     category: 'Business Dev',
     name: 'eCommerce Vape Website',
     description: 'An ECommerce Vape website built for client purpose using wordpress CMS and custom JS code.',
-    link: 'www.vapecoco.com',
+    link: 'https://www.vapecoco.com',
     github: 'https://github.com/HChopra22/dissertation-text-final',
   },
 ]
@@ -78,7 +78,7 @@ const Projects = () => {
   return (
     <section className='min-h-screen pt-12'>
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">My Projects</h2>
+        <h1 className="section-title mb-8 xl:mb-16 text-center mx-auto">My Projects</h1>
 
         {/* Tabs */}
         <Tabs defaultValue={category} className="mb-24 xl:mb-48">
