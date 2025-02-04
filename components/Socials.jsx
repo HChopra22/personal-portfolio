@@ -1,9 +1,7 @@
 'use client'
 
 import { RiLinkedinFill, RiGithubFill, RiInstagramFill } from 'react-icons/ri'
-
 import Link from 'next/link'
-
 import React from 'react'
 
 const icons = [
@@ -21,13 +19,22 @@ const icons = [
   },
 ]
 
-const Socials = ({containerStyles, iconStyles}) => {
+const Socials = ({ containerStyles, iconStyles }) => {
   return (
     <div className={`${containerStyles}`}>
-      {icons.map((icon, index)=> {
-        return <Link href={icon.path} key={index}>
-        <div className={`${iconStyles}`}>{icon.name}</div>
-        </Link>
+      {icons.map((icon, index) => {
+        return (
+          <Link 
+            href={icon.path} 
+            key={index} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <div className={`${iconStyles}`}>
+              {icon.name}
+            </div>
+          </Link>
+        )
       })}
     </div>
   )
