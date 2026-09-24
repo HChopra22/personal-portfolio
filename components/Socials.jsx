@@ -1,43 +1,19 @@
-'use client'
-
 import { RiLinkedinFill, RiGithubFill, RiInstagramFill } from 'react-icons/ri'
-import Link from 'next/link'
-import React from 'react'
+import { socials } from '@/data/site'
 
-const icons = [
-  {
-    path: 'https://www.linkedin.com/in/harshdeep-chopra/',
-    name: <RiLinkedinFill/>
-  },
-  {
-    path: 'https://github.com/HChopra22',
-    name: <RiGithubFill/>
-  },
-  {
-    path: 'https://www.instagram.com/harshc._/',
-    name: <RiInstagramFill/>
-  },
-]
+const icons = { LinkedIn: RiLinkedinFill, GitHub: RiGithubFill, Instagram: RiInstagramFill }
 
-const Socials = ({ containerStyles, iconStyles }) => {
-  return (
-    <div className={`${containerStyles}`}>
-      {icons.map((icon, index) => {
-        return (
-          <Link 
-            href={icon.path} 
-            key={index} 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <div className={`${iconStyles}`}>
-              {icon.name}
-            </div>
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
+const Socials = ({ containerStyles, iconStyles }) => (
+  <div className={containerStyles}>
+    {socials.map(({ name, url }) => {
+      const Icon = icons[name]
+      return (
+        <a href={url} key={name} target="_blank" rel="noopener noreferrer me" aria-label={`Harsh Chopra on ${name}`} className={iconStyles}>
+          <Icon aria-hidden="true" />
+        </a>
+      )
+    })}
+  </div>
+)
 
 export default Socials

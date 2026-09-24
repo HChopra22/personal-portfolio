@@ -1,21 +1,18 @@
-'use client'
+import Link from 'next/link'
+import { Button } from './ui/button'
 
-import { Button } from "./ui/button"
-import Link from "next/link"
-
-const Cta = () => {
-  return (
-    <section className="py-24 bg-tertiary dark:bg-secondary">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center">
-          <h2 className="h2 max-w-xl text-center mb-8">Want to turn your business ideas into reality? <br/> I am here to help!</h2>
-          <Link href='/contact'>
-            <Button>Contact Me</Button>
-          </Link>
-        </div>
+const Cta = () => (
+  <section className="py-24 bg-tertiary dark:bg-secondary">
+    <div className="container mx-auto">
+      <div className="flex flex-col items-center text-center">
+        <h2 className="h2 max-w-xl mb-4">Got a website, product or tracking problem?</h2>
+        <p className="subtitle max-w-lg">Tell me what you’re trying to achieve and I’ll tell you honestly how I can help.</p>
+        <Button asChild>
+          <Link href="/contact">Contact me</Link>
+        </Button>
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 export default Cta
