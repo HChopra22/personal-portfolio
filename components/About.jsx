@@ -2,12 +2,13 @@
 
 import DevImg from "./DevImg"
 import Image from "next/image"
-import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useEffect, useState } from "react";
 
 
 import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar, Briefcase } from "lucide-react"
 import { info } from "autoprefixer"
-import Lottie from "lottie-react"
+const Lottie = typeof window !== "undefined" ? require("lottie-react").default : () => null;
 import animationData from '../public/about/uianimation.json'
 import animationdarkData from '../public/about/lightui.json'
 
@@ -138,6 +139,12 @@ const skillData = [
   }
 ]
 const About = () => {
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    setShowAnimation(true);
+  }, []);
+
   const getData = (arr, title) => {
     return arr.find((item) => item.title === title)
   }
@@ -148,7 +155,7 @@ const About = () => {
         <div className="flex flex-col xl:flex-row">
           {/*image */}
           <div className="hidden xl:flex flex-1 relative p-4 w-[505px] h-[505px]">
-            <Lottie animationData={animationdarkData}></Lottie>
+            {showAnimation && typeof window !== "undefined" && <Lottie animationData={animationdarkData} />}
           </div>
           {/*tabs */}
           <div className="flex-1">
@@ -255,7 +262,7 @@ const About = () => {
                           const {name} = item
                           return (
                             <div className="w-3/4 p-2 text-center xl:text-left mx-auto xl:mx-0" key={index}>
-                              <div className="font-medium">{name}</div>
+                              <div className="font-medium transform transition-transform duration-300 hover:scale-110">{name}</div>
                             </div>
                           )
                         })}
@@ -270,7 +277,10 @@ const About = () => {
                         {getData(skillData, 'tools').data.map((item, index)=> {
                           const {imgPath} = item
                           return (
-                            <div key={index}>
+                            <div
+                              key={index}
+                              className="transition-transform duration-300 transform hover:scale-110"
+                            >
                               <Image src={imgPath} width={60} height={60} alt="software-tools" priority />
                             </div>
                           )

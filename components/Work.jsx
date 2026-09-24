@@ -79,9 +79,9 @@ const Work = () => {
           }}
           spaceBetween={30} modules={[Pagination]} pagination={{clickable: true}}>
             {/* show first 4 projects for slider*/}
-            {projectData.slice(0.4).map((project, index)=> {
-              return <SwiperSlide key={index}>
-                <ProjectCard project={project}></ProjectCard>
+            {projectData.slice(0, 4).map((project, index)=> {
+              return <SwiperSlide key={index} className="min-h-[380px] flex">
+                <ProjectCard project={project} className="flex-1" />
               </SwiperSlide>
             })}
           </Swiper>

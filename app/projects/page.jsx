@@ -45,6 +45,14 @@ const projectData = [
     github: 'https://github.com/HChopra22/dissertation-text-final',
   },
   {
+    image: '/work/sidhu.png',
+    category: 'Business Dev',
+    name: 'Personal Trainer Website',
+    description: 'A Personal Trainer website built for client purpose using WIX CMS and custom JS code. The site is designed to attract new clients and showcase services.',
+    link: 'https://www.sidhufitness.co.uk',
+    github: '/',
+  },
+  {
     image: '/work/vapecoco.png',
     category: 'Business Dev',
     name: 'eCommerce Vape Website',

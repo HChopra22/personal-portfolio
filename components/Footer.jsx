@@ -1,3 +1,5 @@
+'use client'
+
 import Socials from "./Socials"
 
 const Footer = () => {

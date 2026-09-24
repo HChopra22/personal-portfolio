@@ -1,3 +1,5 @@
+'use client'
+
 const Modal = ({ isOpen, onClose, title, extendedDescription, media }) => {
   if (!isOpen) return null
 
