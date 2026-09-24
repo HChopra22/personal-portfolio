@@ -48,7 +48,7 @@ const jsonLd = {
       name: site.name,
       alternateName: site.legalName,
       url: SITE_URL,
-      image: `${SITE_URL}/hero/harsh-hero-memoji-1.png`,
+      image: `${SITE_URL}/opengraph-image`,
       jobTitle: site.jobTitle,
       worksFor: { '@type': 'Organization', name: site.employer },
       alumniOf: { '@type': 'CollegeOrUniversity', name: 'Royal Holloway, University of London' },

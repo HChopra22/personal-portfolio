@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { services } from '@/data/site'
+import Reveal, { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 
 const icons = { Paintbrush2, Laptop, TrendingUp, Search, Camera, Video }
 
@@ -33,32 +34,41 @@ const ServiceCard = ({ item, cta }) => {
 const Services = () => (
   <section id="services" className="mb-12 xl:mb-36">
     <div className="container mx-auto">
-      <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto mt-20">What I do</h2>
-      <ul className="grid md:grid-cols-2 xl:grid-cols-3 justify-center gap-y-20 xl:gap-y-24 gap-x-8">
+      <Reveal><h2 className="section-title mb-12 xl:mb-24 text-center mx-auto mt-20">What I do</h2></Reveal>
+      <RevealGroup as="ul" className="grid md:grid-cols-2 xl:grid-cols-3 justify-center gap-y-20 xl:gap-y-24 gap-x-8">
         {services.map((item) => (
-          <li key={item.title}>
-            {item.link ? (
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="block h-full rounded-lg">
-                <ServiceCard item={item} cta={<>Visit my photography site <ArrowUpRight size={16} aria-hidden="true" /></>} />
-              </a>
-            ) : (
-              <Dialog>
-                <DialogTrigger className="block h-full w-full rounded-lg">
-                  <ServiceCard item={item} cta={<>Learn more <Plus size={16} aria-hidden="true" /></>} />
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogTitle>{item.title}</DialogTitle>
-                  <DialogDescription className="mb-4">{item.description}</DialogDescription>
-                  <p className="text-lg mb-8">{item.more}</p>
-                  <Button asChild>
-                    <Link href="/contact">Get in touch</Link>
-                  </Button>
-                </DialogContent>
-              </Dialog>
-            )}
-          </li>
+          <RevealItem as="li" key={item.title}>
+            <Dialog>
+              <DialogTrigger className="block h-full w-full rounded-lg">
+                <ServiceCard item={item} cta={<>{item.cta ? 'View my work' : 'Learn more'} <Plus size={16} aria-hidden="true" /></>} />
+              </DialogTrigger>
+              <DialogContent>
+                <DialogTitle>{item.title}</DialogTitle>
+                <DialogDescription className="mb-4">{item.description}</DialogDescription>
+                <p className="text-lg mb-8">{item.more}</p>
+                <div className="flex flex-wrap gap-3">
+                  {item.cta ? (
+                    <>
+                      <Button asChild className="gap-x-2">
+                        <a href={item.cta.href} target="_blank" rel="noopener noreferrer">
+                          {item.cta.label} <ArrowUpRight size={18} aria-hidden="true" />
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline">
+                        <Link href="/contact">Book a shoot</Link>
+                      </Button>
+                    </>
+                  ) : (
+                    <Button asChild>
+                      <Link href="/contact">Get in touch</Link>
+                    </Button>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
+          </RevealItem>
         ))}
-      </ul>
+      </RevealGroup>
     </div>
   </section>
 )

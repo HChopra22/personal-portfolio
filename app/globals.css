@@ -95,6 +95,10 @@
   @apply z-10 w-[200px] h-[68px] bg-white dark:bg-secondary/90 dark:backdrop-blur-[44px] shadow-2xl p-4 rounded-[10px] flex items-center gap-x-1;
 }
 
+/* per-case-study accent (light / dark) */
+[data-accent] { --accent: var(--accent-base); }
+.dark [data-accent] { --accent: var(--accent-dark); }
+
 /* swiper bullets */
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   @apply bg-primary;

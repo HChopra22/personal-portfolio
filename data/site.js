@@ -109,22 +109,54 @@ export const services = [
     icon: 'Camera',
     title: 'Photography',
     description:
-      'Landscapes from around the world and portraits for special occasions. See my photography portfolio.',
-    link: 'https://photos.harshchopra.com',
+      'Landscapes from around the world, portraits and events — shot on Sony full-frame and edited in Lightroom.',
+    more: 'Travel and landscape work, portraits and special occasions. My full galleries live on my photography portfolio.',
+    cta: { label: 'View photography portfolio', href: 'https://photos.harshchopra.com' },
   },
   {
     icon: 'Video',
     title: 'Videography',
     description:
       'High-quality video including drone footage and B-roll, shaped around the story the client wants to tell.',
-    more: 'From planning shots to aerial drone capture and edit, I produce video content tailored to the client’s vision and channel.',
+    more: 'From planning shots to aerial drone capture and edit, I produce video content tailored to the client’s vision and channel. Stills and video work sit together on my photography portfolio.',
+    cta: { label: 'See my visual work', href: 'https://photos.harshchopra.com' },
   },
 ]
 
 /* -------------------------------- Projects -------------------------------- */
-// First four `featured` projects appear in the homepage slider.
+// Projects with a `slug` have a full case study at /work/[slug] (content in data/caseStudies.js).
 
 export const projects = [
+  {
+    image: '/work/epsom-smiles/home-desktop.webp',
+    category: 'Client Work',
+    name: 'Epsom Smiles Dental Practice',
+    description: 'Website, local SEO, Google Ads, GA4 tracking and patient comms for an independent dental practice in Surrey.',
+    slug: 'epsom-smiles',
+    link: 'https://www.epsomsmilesdental.co.uk',
+    github: null,
+    featured: true,
+  },
+  {
+    image: '/work/green-lion-distro/product-page-redesign.webp',
+    category: 'Client Work',
+    name: 'Green Lion Distro',
+    description: 'A custom B2B WooCommerce trade store with approval-gated accounts, role-based pricing and a variation-first ordering UI.',
+    slug: 'green-lion-distro',
+    link: 'https://greenliondistro.com',
+    github: null,
+    featured: true,
+  },
+  {
+    image: '/work/a2z-bridging/case-study-dover.webp',
+    category: 'Client Work',
+    name: 'A2Z Bridging',
+    description: 'SEO, case-study content, LinkedIn, Google Ads, tracking and CRM for an FCA-regulated bridging finance broker.',
+    slug: 'a2z-bridging',
+    link: 'https://a2zbridging.co.uk',
+    github: null,
+    featured: true,
+  },
   {
     image: '/work/portfoliopic.png',
     category: 'Web Development',
@@ -132,7 +164,6 @@ export const projects = [
     description: 'This site — built to showcase my work and services. Stack: React, Next.js, Tailwind CSS, shadcn/ui.',
     link: null,
     github: 'https://github.com/HChopra22/personal-portfolio',
-    featured: true,
   },
   {
     image: '/work/Photogpic.png',
@@ -141,29 +172,26 @@ export const projects = [
     description: 'A gallery for my landscape and portrait photography from around the world. Stack: React, Tailwind CSS, Framer Motion.',
     link: 'https://photos.harshchopra.com',
     github: 'https://github.com/HChopra22/photog-portfolio',
-    featured: true,
   },
   {
     image: '/work/sidhu.png',
-    category: 'Client Sites',
+    category: 'Client Work',
     name: 'Personal Trainer Website',
     description: 'A personal trainer site built on Wix with custom JavaScript, designed to showcase services and attract new clients.',
     link: 'https://www.sidhufitness.co.uk',
     github: null,
-    featured: true,
   },
   {
     image: '/work/vapecoco.png',
-    category: 'Client Sites',
+    category: 'Client Work',
     name: 'eCommerce Vape Store',
     description: 'An eCommerce store built for a client on WordPress with custom JavaScript.',
     link: 'https://www.vapecoco.com',
     github: null,
-    featured: true,
   },
   {
     image: '/work/occsite.png',
-    category: 'Client Sites',
+    category: 'Client Work',
     name: 'Indian Restaurant Website',
     description: 'A restaurant website built on Wix. I handled the roadmap, build and photography, and set up and ran the Google Business Profile.',
     link: null,

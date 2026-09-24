@@ -1,17 +1,16 @@
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { Download, Send } from 'lucide-react'
-import { RiBriefcase4Fill, RiTodoFill, RiArrowDownSLine, RiArtboard2Fill } from 'react-icons/ri'
+import { RiArrowDownSLine } from 'react-icons/ri'
 
-import DevImg from './DevImg'
-import Badge from './Badge'
+import HeroVisual from './HeroVisual'
 import Socials from './Socials'
 import CvLink from './CvLink'
-import { site, yearsOfExperience } from '@/data/site'
+import { site } from '@/data/site'
 
 const Hero = () => {
   return (
-    <section className="overflow-x-clip py-12 xl:py-24 min-h-[calc(100vh-102px)] xl:pt-28 bg-[#fef9f5] dark:bg-accent relative">
+    <section id="top" className="overflow-x-clip py-12 xl:py-24 min-h-[calc(100vh-102px)] xl:pt-28 bg-[#fef9f5] dark:bg-accent relative">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           {/* text */}
@@ -40,15 +39,24 @@ const Hero = () => {
               </Button>
             </div>
             <Socials containerStyles="flex gap-x-6 mx-auto xl:mx-0" iconStyles="text-foreground text-[22px] hover:text-primary transition-all" />
+            {/* compact proof strip for smaller screens (the collage is desktop-only) */}
+            <ul className="xl:hidden mt-10 grid grid-cols-3 gap-3 text-left">
+              {[
+                ['+164%', 'search impressions', 'A2Z Bridging'],
+                ['277', 'calls from ads', 'Epsom Smiles'],
+                ['3', 'case studies', 'with the numbers'],
+              ].map(([v, l, c]) => (
+                <li key={l} className="rounded-xl bg-background/70 p-3 ring-1 ring-border dark:bg-secondary/60">
+                  <div className="text-xl font-bold text-primary">{v}</div>
+                  <div className="text-xs leading-tight">{l}</div>
+                  <div className="mt-1 text-[10px] text-muted-foreground">{c}</div>
+                </li>
+              ))}
+            </ul>
           </div>
-          {/* image */}
-          <div className="hidden xl:flex relative w-[500px] h-[500px] shrink-0" aria-hidden="true">
-            <Badge containerStyles="absolute top-[2%] -right-4" icon={<RiBriefcase4Fill />} endCountNum={yearsOfExperience()} endCountText="+" badgeText="Years of experience" />
-            <Badge containerStyles="absolute top-[24%] -left-[6rem]" icon={<RiTodoFill />} endCountNum={10} endCountText="+" badgeText="Projects completed" />
-            <Badge containerStyles="absolute top-[65%] -right-8" icon={<RiArtboard2Fill />} endCountNum={10} endCountText="+" badgeText="UX designs created" />
-            <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2">
-              <DevImg containerStyles="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom" imgSrc="/hero/harsh-hero-memoji-1.png" alt="" />
-            </div>
+          {/* visual */}
+          <div className="hidden xl:flex shrink-0 items-center">
+            <HeroVisual />
           </div>
         </div>
         <a href="#about" aria-label="Scroll to About" className="hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-8 animate-bounce">

@@ -1,14 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { User2, MailIcon, HomeIcon, GraduationCap, Briefcase } from 'lucide-react'
 import { site, education, experience, skills, tools } from '@/data/site'
 
-// Lottie touches `document` at import time, so load it client-side only.
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
+import AboutBento from './AboutBento'
+import Reveal from './motion/Reveal'
 
 const infoData = [
   { icon: <User2 size={20} />, text: site.name },
@@ -41,21 +39,13 @@ const Timeline = ({ icon, title, items }) => (
 )
 
 const About = () => {
-  const [animation, setAnimation] = useState(null)
-
-  useEffect(() => {
-    // Only fetch the (large) animation on desktop, where it is shown.
-    if (!window.matchMedia('(min-width: 1400px)').matches) return
-    fetch('/about/lightui.json').then((r) => r.json()).then(setAnimation).catch(() => {})
-  }, [])
-
   return (
     <section id="about" className="py-12 xl:py-24">
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">About me</h2>
+        <Reveal><h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">About me</h2></Reveal>
         <div className="flex flex-col xl:flex-row">
-          <div className="hidden xl:flex flex-1 relative p-4 w-[505px] h-[505px]" aria-hidden="true">
-            {animation && <Lottie animationData={animation} />}
+          <div className="mb-12 xl:mb-0 xl:mr-16 xl:w-[520px] xl:shrink-0">
+            <AboutBento />
           </div>
           <div className="flex-1">
             <Tabs defaultValue="personal">

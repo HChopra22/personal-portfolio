@@ -7,11 +7,12 @@ import { Pagination, A11y } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { reviews } from '@/data/site'
+import Reveal from './motion/Reveal'
 
 const Reviews = () => (
   <section id="reviews" className="mb-12 xl:mb-32">
     <div className="container mx-auto">
-      <h2 className="section-title mb-12 text-center mx-auto">Recommendations</h2>
+      <Reveal><h2 className="section-title mb-12 text-center mx-auto">Recommendations</h2></Reveal>
       <Swiper
         className="!pb-12"
         slidesPerView={1}
