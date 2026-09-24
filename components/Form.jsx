@@ -7,7 +7,7 @@ import { User, MailIcon, ArrowRightIcon, MessagesSquare, CheckCircle2, Loader2 }
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
-import { contactSchema } from '@/lib/contact-schema'
+import { contactSchema, contactTopics } from '@/lib/contact-schema'
 import { track } from '@/lib/analytics'
 import { site } from '@/data/site'
 
@@ -22,7 +22,7 @@ const Form = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(contactSchema), defaultValues: { name: '', email: '', message: '', company: '' } })
+  } = useForm({ resolver: zodResolver(contactSchema), defaultValues: { name: '', email: '', topics: [], message: '', company: '' } })
 
   const onSubmit = async (data) => {
     setStatus('sending')
@@ -36,7 +36,7 @@ const Form = () => {
       const json = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(json.error || 'Something went wrong.')
       setStatus('sent')
-      track('generate_lead', { form_name: 'contact' })
+      track('generate_lead', { form_name: 'contact', topics: (data.topics || []).join('|') })
       reset()
     } catch (err) {
       setStatus('error')
@@ -73,6 +73,19 @@ const Form = () => {
         </div>
         <FieldError id="email-error" message={errors.email?.message} />
       </div>
+      <fieldset>
+        <legend className="mb-3 ml-2 text-sm font-medium">What can I help with?</legend>
+        <div className="flex flex-wrap gap-2">
+          {contactTopics.map((t) => (
+            <label key={t} className="cursor-pointer">
+              <input type="checkbox" value={t} className="peer sr-only" {...register('topics')} />
+              <span className="inline-block rounded-full border border-input px-4 py-2 text-sm transition-colors hover:border-primary peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:ring-2 peer-focus-visible:ring-ring">
+                {t}
+              </span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
       <div>
         <label htmlFor="message" className="sr-only">Message</label>
         <div className="relative flex items-center">

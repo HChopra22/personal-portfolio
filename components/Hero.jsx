@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 import { Download, Send } from 'lucide-react'
 import { RiArrowDownSLine } from 'react-icons/ri'
 
-import HeroVisual from './HeroVisual'
+import HeroCarousel from './HeroCarousel'
 import Socials from './Socials'
 import CvLink from './CvLink'
 import { site } from '@/data/site'
@@ -56,7 +56,7 @@ const Hero = () => {
           </div>
           {/* visual */}
           <div className="hidden xl:flex shrink-0 items-center">
-            <HeroVisual />
+            <HeroCarousel />
           </div>
         </div>
         <a href="#about" aria-label="Scroll to About" className="hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-8 animate-bounce">

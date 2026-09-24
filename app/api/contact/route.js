@@ -21,7 +21,8 @@ export async function POST(request) {
     return NextResponse.json({ error: 'Please check the form and try again.' }, { status: 400 })
   }
 
-  const { name, email, message, company } = parsed.data
+  const { name, email, message, company, topics = [] } = parsed.data
+  const topicLine = topics.length ? topics.join(', ') : 'Not specified'
   // Honeypot filled → pretend success, send nothing
   if (company) return NextResponse.json({ ok: true })
 
@@ -39,8 +40,8 @@ export async function POST(request) {
       to: [CONTACT_TO_EMAIL],
       reply_to: email,
       subject: `New enquiry from ${name} — harshchopra.com`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      html: `<p><strong>Name:</strong> ${escape(name)}<br/><strong>Email:</strong> ${escape(email)}</p><p style="white-space:pre-wrap">${escape(message)}</p>`,
+      text: `Name: ${name}\nEmail: ${email}\nInterested in: ${topicLine}\n\n${message}`,
+      html: `<p><strong>Name:</strong> ${escape(name)}<br/><strong>Email:</strong> ${escape(email)}<br/><strong>Interested in:</strong> ${escape(topicLine)}</p><p style="white-space:pre-wrap">${escape(message)}</p>`,
     }),
   })
 

@@ -19,9 +19,19 @@ export default function HeroVisual() {
 
   return (
     <div ref={ref} className="relative h-[520px] w-[600px]" aria-hidden="true">
-      {/* backdrop */}
-      <div className="absolute right-4 top-6 h-[440px] w-[440px] rounded-[42%_58%_60%_40%/45%_40%_60%_55%] bg-primary/90 dark:bg-primary" />
-      <div className="absolute right-16 top-16 h-[380px] w-[380px] rounded-full border border-white/30" />
+      {/* backdrop: a dotted "canvas" panel with soft brand glow */}
+      <div className="absolute inset-x-6 inset-y-4 overflow-hidden rounded-[2rem] border border-border bg-background/60 dark:bg-secondary/50">
+        <div
+          className="absolute inset-0 opacity-70"
+          style={{ backgroundImage: 'radial-gradient(hsl(var(--primary) / 0.22) 1.2px, transparent 1.2px)', backgroundSize: '22px 22px' }}
+        />
+        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full blur-3xl" style={{ background: 'hsl(var(--primary) / 0.25)' }} />
+        <div className="absolute -bottom-28 -left-16 h-72 w-72 rounded-full blur-3xl" style={{ background: 'rgba(254, 124, 88, 0.25)' }} />
+        {/* faint chart gridlines */}
+        <div className="absolute inset-x-8 bottom-10 top-10 flex flex-col justify-between">
+          {[0, 1, 2, 3].map((i) => <span key={i} className="h-px w-full bg-border" />)}
+        </div>
+      </div>
 
       {/* browser */}
       <motion.div style={{ y: yBrowser }} className="absolute left-6 top-12 w-[470px] -rotate-2">
