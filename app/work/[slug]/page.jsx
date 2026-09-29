@@ -7,6 +7,9 @@ import ParallaxCover from '@/components/work/ParallaxCover'
 import DeviceFrame from '@/components/work/DeviceFrame'
 import StatCounter from '@/components/work/StatCounter'
 import BarChart from '@/components/work/BarChart'
+import SitePreview from '@/components/work/SitePreview'
+import EmailShowcase from '@/components/work/EmailShowcase'
+import { InstagramCarousel, Stories, LinkedInPost } from '@/components/work/SocialShowcase'
 import { caseStudies, getCaseStudy } from '@/data/caseStudies'
 import { SITE_URL, site } from '@/data/site'
 import { pageMetadata } from '@/lib/metadata'
@@ -163,9 +166,54 @@ export default function CaseStudyPage({ params }) {
         </div>
       </section>
 
+      {/* media showcases */}
+      {(cs.media || []).map((m, mi) => (
+        <section key={m.title} aria-label={m.title} className={`py-20 xl:py-28 ${mi % 2 ? 'bg-tertiary dark:bg-secondary/40' : ''}`}>
+          <div className="container mx-auto">
+            <Reveal className="mb-10 max-w-2xl">
+              <SectionLabel>{m.type === 'site' ? 'The website' : m.type === 'emails' ? 'Email marketing' : 'Social content'}</SectionLabel>
+              <h2 className="h2 mb-4">{m.title}</h2>
+              {m.intro && <p className="text-lg text-muted-foreground">{m.intro}</p>}
+            </Reveal>
+            <Reveal>
+              {m.type === 'site' && <SitePreview screens={m.screens} />}
+              {m.type === 'emails' && <EmailShowcase items={m.items} from={m.from} />}
+              {m.type === 'social' && (
+                <div className="space-y-16">
+                  <div className="grid items-start gap-12 lg:grid-cols-2">
+                    <div>
+                      <h3 className="h4 mb-6 text-center lg:text-left">Instagram carousel</h3>
+                      <InstagramCarousel {...m.instagram} />
+                    </div>
+                    <div>
+                      <h3 className="h4 mb-6 text-center lg:text-left">Instagram stories</h3>
+                      <Stories items={m.stories} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="h4 mb-6 text-center lg:text-left">LinkedIn company posts</h3>
+                    <div className="grid items-start gap-8 lg:grid-cols-2">
+                      {m.linkedin.map((post) => <LinkedInPost key={post.date} {...post} />)}
+                    </div>
+                  </div>
+                  {m.more?.length > 0 && (
+                    <div>
+                      <h3 className="h4 mb-6 text-center lg:text-left">More LinkedIn creative</h3>
+                      <div className="grid gap-6 sm:grid-cols-2">
+                        {m.more.map((g) => <DeviceFrame key={g.src} {...g} frame="none" sizes="(min-width: 640px) 33vw, 100vw" />)}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </Reveal>
+          </div>
+        </section>
+      ))}
+
       {/* gallery */}
       <section aria-label="Project visuals" className="container mx-auto py-20 xl:py-28">
-        <Reveal><SectionLabel>The work</SectionLabel></Reveal>
+        <Reveal><SectionLabel>More from the project</SectionLabel></Reveal>
         <div className={`grid items-start gap-10 ${wide.length > 1 ? 'lg:grid-cols-[2fr_1fr]' : ''}`}>
           <div className="space-y-10">
             {wide.filter((g) => g.frame === 'browser' || g.full).map((g, i) => (

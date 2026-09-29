@@ -60,11 +60,32 @@ export const caseStudies = [
       values: [18, 20, 22, 24, 21, 38, 43, 51, 33, 46, 35, 40],
       highlightFrom: 5,
     },
+    media: [
+      {
+        type: 'site',
+        title: 'The website — old vs new',
+        intro: 'The live WordPress site I manage today, the high-intent emergency page, and the new headless Next.js build in development. Switch between desktop and mobile.',
+        screens: [
+          { label: 'Current site', tag: 'Live · WordPress + Elementor', url: 'epsomsmilesdental.co.uk', desktop: { src: '/work/epsom-smiles/site-home-desktop.webp', width: 1280, height: 2844, alt: "Epsom Smiles homepage, desktop" }, mobile: { src: '/work/epsom-smiles/site-home-mobile.webp', width: 585, height: 4500, alt: "Epsom Smiles homepage, mobile" } },
+          { label: 'Emergency page', tag: 'Live · high-intent landing page', url: 'epsomsmilesdental.co.uk/emergency-dentist-epsom', desktop: { src: '/work/epsom-smiles/site-emergency-desktop.webp', width: 1280, height: 2844, alt: "Emergency dentist page, desktop" }, mobile: { src: '/work/epsom-smiles/site-emergency-mobile.webp', width: 585, height: 4500, alt: "Emergency dentist page, mobile" } },
+          { label: 'New design', tag: 'In development · headless Next.js on WordPress', url: 'epsomsmilesdental.co.uk (new build)', desktop: { src: '/work/epsom-smiles/site-new-desktop.webp', width: 1280, height: 2133, alt: "New Epsom Smiles design, desktop" }, mobile: { src: '/work/epsom-smiles/site-new-mobile.webp', width: 585, height: 3900, alt: "New Epsom Smiles design, mobile" } },
+        ],
+      },
+      {
+        type: 'emails',
+        title: 'Patient newsletters',
+        intro: 'Recall, referral and seasonal campaigns built as table-based HTML for CareStack — on-brand, mobile-first and tracked back to bookings.',
+        from: 'Epsom Smiles <enquiries@epsomsmiles.co.uk>',
+        items: [
+          { subject: 'It’s been a while — summer recall', note: 'Recall + refer-a-friend', src: '/work/epsom-smiles/email-summer-recall.webp', width: 640, height: 2185 },
+          { subject: 'The heat & your teeth', note: 'Seasonal tips + check-up CTA', src: '/work/epsom-smiles/email-heatwave.webp', width: 640, height: 2519 },
+          { subject: 'Start term with a fresh smile', note: 'Back to school · families', src: '/work/epsom-smiles/email-back-to-school.webp', width: 640, height: 2707 },
+          { subject: 'Don’t tough it out', note: 'Tooth-pain re-engagement', src: '/work/epsom-smiles/email-tooth-pain.webp', width: 640, height: 1645 },
+        ],
+      },
+    ],
     gallery: [
       { src: '/work/epsom-smiles/google-ads.webp', width: 1204, height: 448, alt: 'Google Ads account overview: 13.6K clicks, 429K impressions, £1.65 average CPC', frame: 'none', full: true },
-      { src: '/work/epsom-smiles/emergency-desktop.webp', width: 1440, height: 900, alt: 'Emergency dentist Epsom page', frame: 'browser' },
-      { src: '/work/epsom-smiles/home-mobile.webp', width: 780, height: 1688, alt: 'Epsom Smiles homepage on mobile', frame: 'phone' },
-      { src: '/work/epsom-smiles/emergency-mobile.webp', width: 780, height: 1688, alt: 'Emergency page on mobile', frame: 'phone' },
     ],
     testimonial: null,
   },
@@ -117,11 +138,21 @@ export const caseStudies = [
     // Add monthly traffic here when available, e.g.
     // chart: { title: 'Monthly sessions', caption: 'GA4 sessions', labels: ['Jan', ...], values: [...], highlightFrom: 0 },
     chart: null,
+    media: [
+      {
+        type: 'site',
+        title: 'The website — old design vs new',
+        intro: 'The brand page before the September 2026 redesign, and after: a hero row, a proper filter bar and flavour cards that work on a phone.',
+        screens: [
+          { label: 'Before', tag: 'Brand page · before the redesign (Mar 2026)', url: 'greenliondistro.com/brand/big-bar', desktop: { src: '/work/green-lion-distro/site-brand-old-desktop.webp', width: 1280, height: 645, alt: "Green Lion brand page before the redesign" }, mobile: null },
+          { label: 'After', tag: 'Brand page · after the redesign (Sep 2026)', url: 'greenliondistro.com/brand/big-bar', desktop: { src: '/work/green-lion-distro/site-brand-desktop.webp', width: 1280, height: 2311, alt: "Green Lion brand page after the redesign, desktop" }, mobile: { src: '/work/green-lion-distro/site-brand-mobile.webp', width: 585, height: 3900, alt: "Green Lion brand page after the redesign, mobile" } },
+          { label: 'Homepage', tag: 'Live homepage', url: 'greenliondistro.com', desktop: { src: '/work/green-lion-distro/site-home-desktop.webp', width: 1280, height: 2844, alt: "Green Lion homepage, desktop" }, mobile: { src: '/work/green-lion-distro/site-home-mobile.webp', width: 585, height: 4500, alt: "Green Lion homepage, mobile" } },
+        ],
+      },
+    ],
     gallery: [
-      { src: '/work/green-lion-distro/product-page-redesign.webp', width: 1440, height: 1100, alt: 'Redesigned brand page with filter bar and variation cards', frame: 'browser' },
-      { src: '/work/green-lion-distro/product-page-mobile.webp', width: 375, height: 1000, alt: 'Mobile brand page with filters open', frame: 'phone' },
-      { src: '/work/green-lion-distro/shop-desktop.webp', width: 1440, height: 900, alt: 'Shop page brand grid', frame: 'browser' },
-      { src: '/work/green-lion-distro/home-mobile.webp', width: 780, height: 1688, alt: 'Green Lion homepage on mobile', frame: 'phone' },
+      { src: '/work/green-lion-distro/product-page-redesign.webp', width: 1440, height: 1100, alt: 'Redesign built from the Figma file — desktop', frame: 'browser' },
+      { src: '/work/green-lion-distro/product-page-mobile.webp', width: 375, height: 1000, alt: 'Redesign — mobile filters open', frame: 'phone' },
     ],
     testimonial: null,
   },
@@ -171,12 +202,38 @@ export const caseStudies = [
       { label: 'Google Ads CTR', value: '10.4%' },
       { label: 'Deals documented as case studies', value: '£3.2m+' },
     ],
+    media: [
+      {
+        type: 'site',
+        title: 'Website & case-study pages',
+        intro: 'The live site, and one of the SEO case-study pages built from my Elementor template — tags, deal snapshot, risk, solution, outcome and FAQs.',
+        screens: [
+          { label: 'Case study page', tag: '£260,000 commercial bridging loan · Dover (Elementor template)', url: 'a2zbridging.co.uk/commercial-bridging-loan-desktop-valuation-dover', desktop: { src: '/work/a2z-bridging/site-casestudy-desktop.webp', width: 1280, height: 3733, alt: "A2Z case study page, desktop" }, mobile: { src: '/work/a2z-bridging/site-casestudy-mobile.webp', width: 585, height: 7800, alt: "A2Z case study page, mobile" } },
+          { label: 'Homepage', tag: 'Live homepage', url: 'a2zbridging.co.uk', desktop: { src: '/work/a2z-bridging/site-home-desktop.webp', width: 1280, height: 2844, alt: "A2Z homepage, desktop" }, mobile: { src: '/work/a2z-bridging/site-home-mobile.webp', width: 585, height: 4500, alt: "A2Z homepage, mobile" } },
+        ],
+      },
+      {
+        type: 'social',
+        title: 'Instagram & LinkedIn content',
+        intro: 'Weekly market-insight posts, case-study graphics, carousels and stories across the company page and staff accounts — all FCA-disclaimed.',
+        instagram: {
+          handle: 'a2zbridging',
+          caption: 'The market “slowed” in Q1. The deals didn’t. Swipe for why certainty still wins in a cooler market →',
+          slides: [{ src: '/work/a2z-bridging/ig-1.webp', width: 720, height: 900, alt: "" }, { src: '/work/a2z-bridging/ig-2.webp', width: 720, height: 900, alt: "" }, { src: '/work/a2z-bridging/ig-3.webp', width: 720, height: 900, alt: "" }, { src: '/work/a2z-bridging/ig-4.webp', width: 720, height: 900, alt: "" }, { src: '/work/a2z-bridging/ig-5.webp', width: 720, height: 900, alt: "" }, { src: '/work/a2z-bridging/ig-6.webp', width: 720, height: 900, alt: "" }],
+        },
+        stories: [{ src: '/work/a2z-bridging/story-1.webp', width: 600, height: 1067, alt: "Instagram story \u2014 Q1 market update" }, { src: '/work/a2z-bridging/story-2.webp', width: 600, height: 1067, alt: "Instagram story \u2014 market insight" }],
+        linkedin: [
+          { author: 'A2Z Bridging', subtitle: 'Company page · Market insight', date: 'June 2026', text: "The base rate hasn't moved. Your deadline has.\n\nThe Bank of England sits at 3.75% and the City expects it to hold again on the 18th. Inflation's still sticky. \"Cheap money is coming\" has been the line for two years now.\n\nHere's what's quietly happening while everyone waits: the UK bridging book has hit a record ~\u00a312bn. Deal flow is accelerating.\n\nBecause in property, the discount is in the timing. A motivated seller, an auction lot, a chain about to collapse \u2014 those don't wait for the MPC.\n\nSpeed isn't a nice-to-have in this market. It's the product.\n\nNo drama. Just delivery.\n\n#BridgingFinance #PropertyFinance #UKProperty #A2ZBridging", image: { src: '/work/a2z-bridging/li-2026-06-08.webp', width: 900, height: 1125, alt: "LinkedIn graphic \u2014 the base rate hasn\u2019t moved" } },
+          { author: 'A2Z Bridging', subtitle: 'Company page · Market insight', date: 'August 2026', text: "Five meetings. Five holds. Anyone waiting for cheap money to come back is going to be waiting a while.\n\nThe Bank of England held at 3.75% again last Thursday \u2014 and three of the nine voted to put rates UP.\n\nMeanwhile, the auction rooms are busy. Landlords exiting under the Renters' Rights Act. Estate sales. Distressed stock. All of it on 28-day completion clocks that high-street banks can't hit.\n\nThat's the market bridging was built for \u2014 and it's why industry loan books have just pushed past \u00a313bn.\n\nSitting on an auction win, a chain break, or a purchase your bank can't move fast enough on? We'll structure it and get it done.\n\n#BridgingFinance #AuctionFinance #PropertyInvestment #A2ZBridging", image: null },
+        ],
+        more: [{ src: '/work/a2z-bridging/li-canary-wharf.webp', width: 1080, height: 1080, alt: "LinkedIn graphic \u2014 \u00a3502,450 auction bridging loan, Canary Wharf" }, { src: '/work/a2z-bridging/li-2026-03-16.webp', width: 1200, height: 627, alt: "LinkedIn graphic \u2014 market insight, March 2026" }, { src: '/work/a2z-bridging/li-2026-03-30.webp', width: 1200, height: 628, alt: "LinkedIn graphic \u2014 the bridging market is moving" }, { src: '/work/a2z-bridging/li-2026-03-09.webp', width: 1200, height: 627, alt: "LinkedIn featured image, March 2026" }],
+      },
+    ],
     gallery: [
       { src: '/work/a2z-bridging/case-study-dover.webp', width: 1080, height: 1080, alt: '£260,000 commercial bridging loan case-study graphic', frame: 'none' },
       { src: '/work/a2z-bridging/case-study-leicester.webp', width: 1080, height: 1080, alt: '£207,500 bridging loan case-study graphic', frame: 'none' },
-      { src: '/work/a2z-bridging/home-mobile.webp', width: 780, height: 1688, alt: 'A2Z Bridging homepage on mobile', frame: 'phone' },
-      { src: '/work/a2z-bridging/featured-warehouse.webp', width: 1536, height: 1024, alt: 'Warehouse refinance featured image', frame: 'none' },
       { src: '/work/a2z-bridging/referral-campaign.webp', width: 900, height: 1600, alt: 'Referral commission campaign graphic', frame: 'none' },
+      { src: '/work/a2z-bridging/featured-warehouse.webp', width: 1536, height: 1024, alt: 'Warehouse refinance featured image', frame: 'none' },
     ],
     testimonial: null,
   },
