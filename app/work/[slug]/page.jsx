@@ -6,6 +6,7 @@ import Reveal, { RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import ParallaxCover from '@/components/work/ParallaxCover'
 import DeviceFrame from '@/components/work/DeviceFrame'
 import StatCounter from '@/components/work/StatCounter'
+import BarChart from '@/components/work/BarChart'
 import { caseStudies, getCaseStudy } from '@/data/caseStudies'
 import { SITE_URL, site } from '@/data/site'
 import { pageMetadata } from '@/lib/metadata'
@@ -121,6 +122,16 @@ export default function CaseStudyPage({ params }) {
         </RevealGroup>
       </section>
 
+      {/* chart */}
+      {cs.chart && (
+        <section aria-label={cs.chart.title} className="container mx-auto pt-20 xl:pt-28">
+          <Reveal>
+            <SectionLabel>The results</SectionLabel>
+            <BarChart {...cs.chart} />
+          </Reveal>
+        </section>
+      )}
+
       {/* challenge */}
       <section className="container mx-auto grid gap-10 py-20 xl:grid-cols-[1fr_2fr] xl:py-28">
         <Reveal className="xl:sticky xl:top-32 xl:self-start">
@@ -157,17 +168,17 @@ export default function CaseStudyPage({ params }) {
         <Reveal><SectionLabel>The work</SectionLabel></Reveal>
         <div className={`grid items-start gap-10 ${wide.length > 1 ? 'lg:grid-cols-[2fr_1fr]' : ''}`}>
           <div className="space-y-10">
-            {wide.filter((g) => g.frame === 'browser').map((g, i) => (
+            {wide.filter((g) => g.frame === 'browser' || g.full).map((g, i) => (
               <Reveal key={g.src} direction={i % 2 ? 'left' : 'right'}>
                 <figure>
-                  <DeviceFrame {...g} url={cs.urlLabel} />
+                  <DeviceFrame {...g} url={g.frame === 'browser' ? cs.urlLabel : undefined} />
                   <figcaption className="mt-3 text-sm text-muted-foreground">{g.alt}</figcaption>
                 </figure>
               </Reveal>
             ))}
-            {wide.some((g) => g.frame === 'none') && (
+            {wide.some((g) => g.frame === 'none' && !g.full) && (
               <div className="columns-1 gap-8 sm:columns-2 [&>*]:mb-8">
-                {wide.filter((g) => g.frame === 'none').map((g, i) => (
+                {wide.filter((g) => g.frame === 'none' && !g.full).map((g, i) => (
                   <Reveal key={g.src} delay={i * 0.08} className="break-inside-avoid">
                     <figure>
                       <DeviceFrame {...g} sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw" />

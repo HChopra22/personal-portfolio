@@ -31,6 +31,20 @@ export const navLinks = [
   { path: '/contact', name: 'contact' },
 ]
 
+// Combined results across client work (used in the hero). Sources:
+// impressions = Epsom Google Ads all-time 429K + Epsom organic (3 mo to 26 Sep 2026) 72.4K
+//               + A2Z organic (16 mo to 26 Sep 2026) 38.5K  ≈ 540K
+// clicks      = Epsom Ads 13.6K + Epsom organic 966 + A2Z organic 1.07K ≈ 15.6K
+export const combinedStats = [
+  { value: '540K+', label: 'Google impressions', note: 'search + ads, across clients' },
+  { value: '15K+', label: 'clicks driven', note: 'from Google to client sites' },
+  { value: '3', label: 'client platforms', note: 'built & run end-to-end' },
+]
+export const impressionMix = [
+  { label: 'Paid search', value: 429 },
+  { label: 'Organic', value: 111 },
+]
+
 export const yearsOfExperience = () => {
   const ms = Date.now() - site.careerStart.getTime()
   return Math.max(1, Math.floor(ms / (365.25 * 24 * 60 * 60 * 1000)))
@@ -207,13 +221,44 @@ export const projects = [
   },
 ]
 
-/* --------------------------------- Reviews -------------------------------- */
+/* ------------------------------ Testimonials ------------------------------ */
+// `approved: false` = draft wording written for the client to review. Drafts show on your local
+// dev server (marked "Draft") but are NOT rendered on the live site until you set approved: true
+// after the person has signed off the exact wording.
 
-export const reviews = [
+export const testimonials = [
+  {
+    name: 'Dr Komal Chopra',
+    job: 'Principal Dentist, Epsom Smiles',
+    caseStudy: 'epsom-smiles',
+    avatarInitials: 'KC',
+    approved: false,
+    review:
+      'Harsh runs our whole digital side — website, Google Ads, tracking and patient emails. Since he took it on, we’ve roughly doubled the new patients we see each month, and I finally know which marketing is actually working.',
+  },
+  {
+    name: 'Dan Crutchley',
+    job: 'Green Lion Distro',
+    caseStudy: 'green-lion-distro',
+    avatarInitials: 'DC',
+    approved: false,
+    review:
+      'Harsh built a trade website around how our customers actually order — approval-only accounts, trade pricing and every flavour one tap from the basket. It works on every device and he’s quick to turn round changes.',
+  },
+  {
+    name: 'Ali Abbas',
+    job: 'A2Z Bridging',
+    caseStudy: 'a2z-bridging',
+    avatarInitials: 'AA',
+    approved: false,
+    review:
+      'Harsh turned our completed deals into content that ranks, set up proper tracking and connected our enquiries straight into Zoho. We’re showing up in far more searches, and nothing falls through the cracks any more.',
+  },
   {
     avatar: '/reviews/dave.png',
     name: 'Dave Cohen',
     job: 'Computer Science Lecturer',
+    approved: true,
     review:
       'Harsh showed impressive skill with his FPS Unity project, using a variety of game states, vector logic and animations to give his game depth. His report covers all aspects of modern games design and its progress in great depth.',
   },
@@ -221,6 +266,7 @@ export const reviews = [
     avatar: '/reviews/silvio.jpg',
     name: 'Silvio Monteiro',
     job: 'Senior Software Engineer',
+    approved: true,
     review:
       'Harsh was responsible for developing and maintaining email direct marketing campaigns for companies such as Microsoft, McAfee, VMware and Cisco. He displayed excellent communication, organisation, reliability and computer literacy. He is flexible and willing to work on any project assigned to him, and has my highest recommendation.',
   },
@@ -228,7 +274,11 @@ export const reviews = [
     avatar: '/reviews/priya.jpg',
     name: 'Paramjeet Kapoor',
     job: 'Accounts Manager',
+    approved: true,
     review:
       'Harsh was up to any task given to him in his four years at Henry Construction. He showed great communication skills, befriending the staff and helping them at every turn. He would be a great addition to any team or project.',
   },
 ]
+
+export const visibleTestimonials = () =>
+  testimonials.filter((t) => t.approved || process.env.NODE_ENV !== 'production')

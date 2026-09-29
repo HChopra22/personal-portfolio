@@ -17,7 +17,7 @@ export default async function Image() {
           <div style={{ fontSize: 24, letterSpacing: 6, textTransform: 'uppercase', color: '#fe7c58', marginBottom: 24 }}>harshchopra.com</div>
           <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.05, marginBottom: 24 }}>Harsh Chopra</div>
           <div style={{ fontSize: 34, color: '#c9c9e0', lineHeight: 1.3 }}>Product · Web · SEO &amp; analytics · Photography</div>
-          <div style={{ display: 'flex', marginTop: 36, fontSize: 24, color: '#fe7c58' }}>+164% search impressions · 277 ad calls</div>
+          <div style={{ display: 'flex', marginTop: 36, fontSize: 24, color: '#fe7c58' }}>540K+ Google impressions · 15K+ clicks driven</div>
         </div>
         <div style={{ display: 'flex', marginLeft: 40, transform: 'rotate(-3deg)', borderRadius: 16, overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,.5)' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

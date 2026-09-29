@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { TrendingUp, MousePointerClick, Activity } from 'lucide-react'
-import { yearsOfExperience } from '@/data/site'
+import { yearsOfExperience, combinedStats, impressionMix } from '@/data/site'
 
 // Layered hero collage: real client screenshots in device frames + floating result cards
 // (figures from the A2Z Bridging and Epsom Smiles reports). Layers drift at different speeds on scroll.
@@ -53,29 +53,36 @@ export default function HeroVisual() {
         </div>
       </motion.div>
 
-      {/* result card: A2Z search impressions */}
-      <motion.div style={{ y: yCard }} className="absolute -left-6 bottom-16 w-[230px]">
+      {/* result card: combined impressions */}
+      <motion.div style={{ y: yCard }} className="absolute -left-6 bottom-16 w-[240px]">
         <motion.div {...float} className="rounded-2xl bg-background p-4 shadow-2xl ring-1 ring-border">
           <div className="mb-2 flex items-center gap-2 text-xs font-medium text-muted-foreground">
-            <TrendingUp size={14} className="text-primary" /> Search impressions
+            <TrendingUp size={14} className="text-primary" /> Google impressions
           </div>
-          <div className="mb-3 text-3xl font-bold text-primary">+164%</div>
-          <div className="flex h-14 items-end gap-2">
-            <div className="flex-1 rounded-t bg-muted-foreground/25" style={{ height: '38%' }} />
-            <div className="flex-1 rounded-t bg-primary" style={{ height: '100%' }} />
+          <div className="mb-3 text-3xl font-bold text-primary">{combinedStats[0].value}</div>
+          <div className="flex h-3 overflow-hidden rounded-full">
+            {impressionMix.map((m, i) => (
+              <span key={m.label} className={i ? 'bg-[#fe7c58]' : 'bg-primary'} style={{ width: `${(m.value / 540) * 100}%` }} />
+            ))}
           </div>
-          <div className="mt-1 flex justify-between text-[10px] text-muted-foreground"><span>2,330</span><span>6,140</span></div>
-          <p className="mt-2 text-[11px] text-muted-foreground">A2Z Bridging · 3 months vs previous</p>
+          <div className="mt-2 flex justify-between text-[10px] text-muted-foreground">
+            {impressionMix.map((m, i) => (
+              <span key={m.label} className="flex items-center gap-1">
+                <span className={`h-2 w-2 rounded-full ${i ? 'bg-[#fe7c58]' : 'bg-primary'}`} />{m.label} {m.value}K
+              </span>
+            ))}
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">Across client sites &amp; ads</p>
         </motion.div>
       </motion.div>
 
-      {/* chip: ads */}
+      {/* chip: clicks */}
       <motion.div style={{ y: yCard }} className="absolute right-0 top-0">
         <motion.div {...float} transition={{ ...(float.transition || {}), delay: 1.2 }} className="flex items-center gap-3 rounded-2xl bg-background px-4 py-3 shadow-2xl ring-1 ring-border">
           <MousePointerClick size={22} className="text-primary" />
           <div>
-            <div className="text-lg font-bold leading-none">277</div>
-            <div className="text-[11px] text-muted-foreground">calls from Google Ads · Epsom Smiles</div>
+            <div className="text-lg font-bold leading-none">{combinedStats[1].value}</div>
+            <div className="text-[11px] text-muted-foreground">clicks from Google to client sites</div>
           </div>
         </motion.div>
       </motion.div>

@@ -6,7 +6,7 @@ import { RiArrowDownSLine } from 'react-icons/ri'
 import HeroCarousel from './HeroCarousel'
 import Socials from './Socials'
 import CvLink from './CvLink'
-import { site } from '@/data/site'
+import { site, combinedStats } from '@/data/site'
 
 const Hero = () => {
   return (
@@ -41,11 +41,7 @@ const Hero = () => {
             <Socials containerStyles="flex gap-x-6 mx-auto xl:mx-0" iconStyles="text-foreground text-[22px] hover:text-primary transition-all" />
             {/* compact proof strip for smaller screens (the collage is desktop-only) */}
             <ul className="xl:hidden mt-10 grid grid-cols-3 gap-3 text-left">
-              {[
-                ['+164%', 'search impressions', 'A2Z Bridging'],
-                ['277', 'calls from ads', 'Epsom Smiles'],
-                ['3', 'case studies', 'with the numbers'],
-              ].map(([v, l, c]) => (
+              {combinedStats.map(({ value: v, label: l, note: c }) => (
                 <li key={l} className="rounded-xl bg-background/70 p-3 ring-1 ring-border dark:bg-secondary/60">
                   <div className="text-xl font-bold text-primary">{v}</div>
                   <div className="text-xs leading-tight">{l}</div>

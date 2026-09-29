@@ -1,8 +1,8 @@
 // Case studies — every figure here comes from the client performance reports and project docs
 // in ~/Clients (see `source` on each stat). Do not add numbers or quotes you can't back up.
 //
-// testimonial: set to { quote, name, role } once the client has approved a quote. While it is
-// null the testimonial block is hidden on the page.
+// chart: optional { title, caption, labels, values, highlightFrom } bar chart shown on the case study.
+// Testimonials live in data/site.js (`testimonials`).
 
 export const caseStudies = [
   {
@@ -20,11 +20,12 @@ export const caseStudies = [
     stack: ['WordPress', 'Elementor', 'Yoast', 'Google Ads', 'GA4', 'CareStack', 'Next.js (headless rebuild)'],
     accent: '#501c66',
     accentOnDark: '#d9c4e8',
+    logo: { src: '/clients/epsom-smiles.webp', width: 600, height: 313, bg: '#ffffff' },
     cover: { src: '/work/epsom-smiles/home-desktop.webp', width: 1440, height: 900, alt: 'Epsom Smiles homepage' },
     stats: [
-      { value: 277, suffix: '', label: 'Phone calls from ads', note: 'Jan – Aug 2026' },
-      { value: 77, suffix: '', label: 'Online bookings tracked in GA4', note: 'Jan – Aug 2026' },
-      { value: 8.95, suffix: '%', decimals: 2, label: 'CTR on the Special Offers campaign', note: 'Well above dental average' },
+      { value: 2, suffix: '×', label: 'New patients per month', note: '~21/mo before → ~41/mo since Feb 2026 (CareStack)' },
+      { value: 3, prefix: '#', suffix: '', label: 'On Google Maps for “dentist Epsom”', note: 'Top-3 organic local result, Sept 2026' },
+      { value: 429, suffix: 'K', label: 'Google Ads impressions', note: '13.6K clicks at £1.65 avg CPC' },
       { value: 12, suffix: '', label: 'High-intent condition pages shipped', note: 'One a week since March' },
     ],
     challenge: [
@@ -45,12 +46,22 @@ export const caseStudies = [
       { title: 'Measurement', body: 'Measured ad enquiries rose from 16 to 23 (+44%) in a 28-day period as more booking and call tracking came online.' },
     ],
     analytics: [
-      { label: 'Ad clicks (Jan – Aug 2026)', value: '10,164' },
+      { label: 'Google Ads clicks (all time)', value: '13.6K' },
+      { label: 'Average cost per click', value: '£1.65' },
+      { label: 'Phone calls from ads (Jan – Aug 2026)', value: '277' },
+      { label: 'Organic clicks, last 3 months', value: '966' },
       { label: 'Brand search position', value: '#1 · 38% CTR' },
-      { label: 'Organic traffic to pricing page', value: '+58%' },
       { label: 'Technical SEO score', value: '100 / 100' },
     ],
+    chart: {
+      title: 'New patients per month',
+      caption: 'CareStack new-patient registrations, Sep 2025 – Aug 2026. Highlighted months are after the new SEO, ads and booking work went live.',
+      labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+      values: [18, 20, 22, 24, 21, 38, 43, 51, 33, 46, 35, 40],
+      highlightFrom: 5,
+    },
     gallery: [
+      { src: '/work/epsom-smiles/google-ads.webp', width: 1204, height: 448, alt: 'Google Ads account overview: 13.6K clicks, 429K impressions, £1.65 average CPC', frame: 'none', full: true },
       { src: '/work/epsom-smiles/emergency-desktop.webp', width: 1440, height: 900, alt: 'Emergency dentist Epsom page', frame: 'browser' },
       { src: '/work/epsom-smiles/home-mobile.webp', width: 780, height: 1688, alt: 'Epsom Smiles homepage on mobile', frame: 'phone' },
       { src: '/work/epsom-smiles/emergency-mobile.webp', width: 780, height: 1688, alt: 'Emergency page on mobile', frame: 'phone' },
@@ -72,12 +83,13 @@ export const caseStudies = [
     stack: ['WordPress', 'WooCommerce', 'XStore child theme', 'Elementor Pro', 'PHP', 'jQuery', 'Figma', 'GA4', 'Microsoft Clarity'],
     accent: '#3aaa35',
     accentOnDark: '#82c781',
+    logo: { src: '/clients/green-lion-distro.png', width: 600, height: 129, bg: '#ffffff' },
     cover: { src: '/work/green-lion-distro/home-desktop.webp', width: 1440, height: 900, alt: 'Green Lion Distro homepage' },
     stats: [
-      { value: 3, suffix: '-level', label: 'Catalogue: brand → product → flavour', note: 'Each flavour is its own card' },
-      { value: 8, suffix: '', label: 'Product categories', note: 'Pods, kits, nic salts, pouches…' },
-      { value: 30, prefix: '£', suffix: 'k', label: 'Trade credit at checkout', note: 'via iwocaPay' },
-      { value: 1300, suffix: '+', label: 'Lines of custom PHP', note: 'All in a child theme' },
+      { value: 100, suffix: '%', label: 'Bespoke B2B trade build', note: 'Custom WooCommerce child theme, no off-the-shelf store' },
+      { value: 6, suffix: '+', label: 'Custom integrations', note: 'iwocaPay, B2B pricing, Mailchimp, OneSignal, GA4, Clarity' },
+      { value: 30, prefix: '£', suffix: 'k', label: 'Trade credit at checkout', note: 'via iwocaPay buy-now-pay-later' },
+      { value: 1300, suffix: '+', label: 'Lines of custom PHP', note: 'Approval flow, pricing, stepper, emails' },
     ],
     challenge: [
       'Trade buyers often order many flavours across several brands in one go. Standard WooCommerce product pages — one dropdown per product — made that slow, and prices must stay hidden from anyone who isn’t an approved business.',
@@ -96,7 +108,15 @@ export const caseStudies = [
       { title: 'September 2026 redesign', body: 'New hero row, filter bar and mobile “view more / close” states shipped from a Figma file, with every existing JS hook preserved.' },
       { title: 'Performance & insight', body: 'LiteSpeed full-page caching, Imagify WebP images and lazy loading; GA4 and Microsoft Clarity session recordings to see where buyers get stuck.' },
     ],
-    analytics: [],
+    analytics: [
+      { label: 'Account approval', value: 'Staff-gated' },
+      { label: 'Guest pricing', value: 'Hidden' },
+      { label: 'Checkout options', value: 'Card · Bank · iwocaPay' },
+      { label: 'Tracking', value: 'GA4 + Clarity' },
+    ],
+    // Add monthly traffic here when available, e.g.
+    // chart: { title: 'Monthly sessions', caption: 'GA4 sessions', labels: ['Jan', ...], values: [...], highlightFrom: 0 },
+    chart: null,
     gallery: [
       { src: '/work/green-lion-distro/product-page-redesign.webp', width: 1440, height: 1100, alt: 'Redesigned brand page with filter bar and variation cards', frame: 'browser' },
       { src: '/work/green-lion-distro/product-page-mobile.webp', width: 375, height: 1000, alt: 'Mobile brand page with filters open', frame: 'phone' },
@@ -120,12 +140,13 @@ export const caseStudies = [
     stack: ['WordPress', 'Elementor', 'Yoast', 'Google Tag Manager', 'GA4', 'Search Console', 'Google Ads', 'Zoho CRM'],
     accent: '#c8191f',
     accentOnDark: '#ff6b6f',
+    logo: { src: '/clients/a2z-bridging.webp', width: 600, height: 184, bg: '#0d1e3d' },
     cover: { src: '/work/a2z-bridging/home-desktop.webp', width: 1440, height: 900, alt: 'A2Z Bridging homepage' },
     stats: [
-      { value: 164, prefix: '+', suffix: '%', label: 'Google search impressions', note: '3 months vs previous 3' },
-      { value: 66, prefix: '+', suffix: '%', label: 'Website sessions', note: '90 days to June 2026' },
-      { value: 10.4, suffix: '%', decimals: 1, label: 'Google Ads click-through rate', note: 'Launched from zero' },
-      { value: 3.2, prefix: '£', suffix: 'm+', decimals: 1, label: 'Deals documented as case studies', note: '10 packages in 3 months' },
+      { value: 164, prefix: '+', suffix: '%', label: 'Google search impressions', note: 'Mar – Jun 2026 vs previous 3 months' },
+      { value: 66, prefix: '+', suffix: '%', label: 'Website sessions (web uplift)', note: '+69% users, 90 days to June 2026' },
+      { value: 42, suffix: '', label: 'Places gained in average Google position', note: '69.9 → 27.9 (H2 2025 vs Apr – Sep 2026)' },
+      { value: 882, suffix: '', label: 'Client records unified in Zoho CRM', note: 'Web + LinkedIn enquiries routed in automatically' },
     ],
     challenge: [
       'A2Z had a website but no system for turning completed deals into search visibility or leads. The site was found almost only for its own name, and phone calls — the main way bridging clients get in touch — weren’t tracked at all.',
@@ -136,19 +157,19 @@ export const caseStudies = [
       'Ran a weekly LinkedIn programme across the company page and staff accounts — market commentary, rate moves and case-study posts in CEO, staff and repost voices.',
       'Planned and launched the Google Ads account, then audited search terms to cut wasted match spend.',
       'Built the GTM container, a clean thank-you page conversion endpoint and a tracking checklist so forms, calls and ads can be credited properly.',
-      'Designed the Zoho CRM: 882 client records, a multi-case pipeline, lender and introducer modules, and a LinkedIn inbound-lead spec so no enquiry leaks.',
+      'Designed and integrated Zoho CRM: 882 client records in one place, a multi-case pipeline, lender and introducer modules, website forms wired straight in, and a LinkedIn inbound-lead spec with a one-business-day SLA — so no enquiry leaks.',
       'Produced branded social creative, seasonal campaigns and a referral-commission campaign.',
     ],
     highlights: [
       { title: 'Search visibility', body: 'Impressions went from 2,330 to 6,140 in three months as case-study and service pages started ranking for non-brand terms. The brand query holds position 1.1 with a 48% CTR.' },
       { title: 'Quality traffic', body: 'Organic search became the highest-quality channel — a 65.9% engagement rate, more than double any other.' },
-      { title: 'LinkedIn to website', body: 'Organic social sessions nearly doubled month-on-month (+90.5%) as the LinkedIn programme found its rhythm.' },
+      { title: 'Zoho CRM integration', body: 'Website and LinkedIn enquiries now land in Zoho automatically, de-duplicated against 882 existing client records, with a one-business-day follow-up SLA — replacing inboxes and spreadsheets.' },
     ],
     analytics: [
-      { label: 'Active users, 90 days', value: '+69%' },
-      { label: 'Search impressions', value: '2,330 → 6,140' },
-      { label: 'Case-study packages', value: '10 in 3 months' },
-      { label: 'Weekly LinkedIn accounts', value: '5+' },
+      { label: '“bridging loan broker” position', value: '1.1' },
+      { label: 'Organic CTR', value: '1.6% → 4%' },
+      { label: 'Google Ads CTR', value: '10.4%' },
+      { label: 'Deals documented as case studies', value: '£3.2m+' },
     ],
     gallery: [
       { src: '/work/a2z-bridging/case-study-dover.webp', width: 1080, height: 1080, alt: '£260,000 commercial bridging loan case-study graphic', frame: 'none' },
